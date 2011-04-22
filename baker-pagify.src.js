@@ -5,7 +5,10 @@
 
 $(function() {
   var page_height, position, offset, page;
-  $(window).scroll(function() {
+  $(document).bind('touchend', snap_to_page);
+  $(document).bind('scroll', snap_to_page);
+  
+  function snap_to_page() {
     page_height = $('.page').eq(0).height();
     position = $(window).scrollTop();
     offset = position % page_height;
@@ -17,5 +20,5 @@ $(function() {
       //scroll down
       $('.page').eq(page+1).intoViewport();
     }
-  });
+  }
 });
