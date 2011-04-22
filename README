@@ -1,0 +1,58 @@
+Hello.
+This is a zero configuration jQuery script which does one very specific thing only: Adding snap-to-page scrolling behaviour to Baker magazines on the iPad. Don’t bother opening anything that incorporates this code on a desktop machine, it won’t work because the scroll event acts differently (continuous firing vs. firing once at the end of a scroll on iOS).
+
+So if you’re building an iPad magazine with the Baker framework (http://bakerframework.com) and you want „pages“ like in the Condé Nast apps, then this is your thing. However, I only built this out of curiosity, actually I don’t like the idea of having pages and I prefer Baker’s standard behaviour with one long, freely scrollable page. This makes me feel kinda bad because by releasing this script I encourage or at least enable people to build paged Baker apps. Do me a favor and read the excellent „scroll or card“  article by Oliver Reichenstein (http://www.informationarchitects.jp/en/ipad-scroll-or-card/) first. If you still decide on pages/cards now, read on and let me explain how to make it work.
+
+First of all we need jQuery and the intoViewPort plugin (http://plugins.jquery.com/project/intoViewport). Remember to download the files, not link them from A CDN because the iPad is a mobile device and you cannot assume an internet connection. Download the files (I included them in this repository) and link them into each of your HTML files. Like so:
+
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="jquery.intoViewport.min.js"></script>
+<script type="text/javascript" src="baker-snapPages.min.js"></script>
+
+That’s all. Well, not quite. You don’t need to add any more JS (I made it that way to keep the HTML clutter free), but your markup needs a specific structure. Don’t worry, chanches are high you would layout your pages like this anyways (of course you can use HTML5 elements like section if you prefer, but the „page“-class is mandatory):
+
+<body>
+  <div class="page">Page 1</div>
+  <div class="page">Page 2</div>
+  <div class="page">Page 3</div>
+  <div class="page">Page 4</div>
+  <div class="page">Page 5</div>
+</body>
+
+In conjunction with the following style:
+
+.page {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 768px;
+  height: 1024px;
+}
+
+So basically you stack divs (aka. pages) on top of each other, sized to the exact dimensions of the iPad screen. Inside of those pages you can do whatever you want, put text, images, videos, you name it. Just make sure it doesn’t get bigger than 768x1024px for portrait view. Oh, and I even added landscape support – so if you’re using the Baker experimental branch with oriention change or the Baker guys offically launched this feature by now and I forgot to update this Readme: You’re good to go.
+
+A hint on how to extent the stylesheet a bit:
+
+.page {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 768px;
+  height: 1024px;
+  position: relative;
+  overflow: hidden;
+}
+
+The container won’t get bigger, no matter what you put in there. And since all sizes are fixed anyways, you can freely use absolute positioning. Now you can position all children like this:
+
+.some_child {
+  position: absolute;
+  top: 60px;
+  left: 100px;
+}
+
+Yeah, I know, I’m stating the obvious. You can test the whole thing by accessing GHPAGES from your iPad’s Safari browser... just keep in mind there’s a 100px offset in Safari due to the toolbar.
+
+You can take a look at a complete setup by inspecting the index.html/style.css in this repository. This is basically just one complete setup. It’ll make sense instantly, trust me. :)
+
+Have fun and feel free to contact me if any questions arise.
