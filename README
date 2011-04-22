@@ -51,7 +51,7 @@ The container won’t get bigger, no matter what you put in there. And since all
   left: 100px;
 }
 
-Yeah, I know, I’m stating the obvious. You can test the whole thing by accessing GHPAGES from your iPad’s Safari browser... just keep in mind there’s a 100px offset in Safari due to the toolbar.
+Yeah, I know, I’m stating the obvious. You can test the whole thing by accessing http://harryfk.github.com/baker-pagify/ from your iPad’s Safari browser... just keep in mind there’s a 100px offset in Safari due to the toolbar.
 
 You can take a look at the full setup by inspecting the index.html/style.css in this repository. By pulling/downloading all the files you get one complete demo. It’ll make sense instantly, trust me. :)
 
