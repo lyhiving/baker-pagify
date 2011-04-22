@@ -1,3 +1,8 @@
+// baker-pagify
+// made by Harry Keller
+// https://github.com/harryfk/baker-pagify
+// released under the MIT license
+
 $(function() {
   var page_height, position, offset, page;
   $(window).scroll(function() {
