@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.page {
+  width: 768px;
+  height: 1024px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* remove if you don't need landscape support or Baker doesn't support it yet */
+@media only screen and (orientation:landscape){
+   /* landscape styles here */
+   .page {
+      width: 1024px;
+      height: 768px;
+   }
+}
+
+/*===== everything below this line is just demo styling, you don't need this ======*/
+
+.light, .dark {
+  font-size: 180px;
+  font-family: sans-serif;
+}
+
+.light {
+  background-color: #ddd;
+  color: #666;
+  text-shadow: 1px 1px 0px #fff;
+}
+
+.dark {
+  background-color: #666;
+  color: #ddd;
+  text-shadow: -1px -1px 0px #444;
+}
+
+.light p, .dark p {
+  position: absolute;
+  width: 850px;
+  padding: 20px 0px;
+  text-align: center;
+  top: 280px;
+  left: -40px;
+  -webkit-transform: rotate(-10deg);
+  font-family: Gill Sans;
+  text-transform: uppercase;
+  border:
+}
+
+.light p {
+  background-color: #eee;
+  border: 10px solid #d0d0d0;
+}
+
+.dark p {
+  background-color: #555;
+  border: 10px solid #6f6f6f;
+}
