@@ -7,7 +7,7 @@ First of all we need jQuery and the intoViewPort plugin (http://plugins.jquery.c
 
 <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
 <script type="text/javascript" src="jquery.intoViewport.min.js"></script>
-<script type="text/javascript" src="baker-snapPages.min.js"></script>
+<script type="text/javascript" src="baker-pagify.min.js"></script>
 
 That’s all. Well, not quite. You don’t need to add any more JS (I made it that way to keep the HTML clutter free), but your markup needs a specific structure. Don’t worry, chances are high you would layout your pages like this anyways (of course you can use HTML5 elements like section if you prefer, but the „page“-class is mandatory):
 
